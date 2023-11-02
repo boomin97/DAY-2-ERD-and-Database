@@ -1,0 +1,24 @@
+create table customer (
+  customer_id SERIAL PRIMARY KEY
+  full_name VARCHAR
+  customer_address VARCHAR
+  phone-num VARCHAR
+);
+
+CREATE TABLE bank(
+  bank_id SERIAL PRIMARY KEY,
+  bank_name VARCHAR,
+  customer_id INTEGER,
+  FOREIGN KEY (customer_id) REFERENCES custiomer(customer_id),
+  car_id INTEGER
+);
+
+CREATE TABLE car(
+  car_id SERIAL PRIMARY KEY,
+  car_year INTEGER,
+  make VARCHAR,
+  model VARCHAR
+);
+
+ALTER TABLE bank
+ADD FOREIGN KEY (car_id)
